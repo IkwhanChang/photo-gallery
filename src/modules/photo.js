@@ -23,7 +23,7 @@ export const getPhotos = (count, callback = () => {}) => dispatch => {
         reader.onload = function() {
 
             const imageDataUrl = reader.result;
-            const caption = `${i+1} Image`;
+            const caption = `Caption: ${i+1} Image`;
             resolve({
               url: imageDataUrl, 
               caption

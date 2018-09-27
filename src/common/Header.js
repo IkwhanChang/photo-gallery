@@ -34,11 +34,12 @@ export default class Header extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/components/">Reload</NavLink>
-              </NavItem>
+              
               <NavItem>
                 <NavLink href="https://github.com/IkwhanChang/photo-gallery">GitHub</NavLink>
+              </NavItem>
+              <NavItem>
+              <NavLink href="https://www.matthewlab.com">Matthew</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
