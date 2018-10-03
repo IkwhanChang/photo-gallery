@@ -32,15 +32,15 @@ class PhotoContainer extends Component{
           transitionName="example"
           transitionEnterTimeout={500}
           transitionLeaveTimeout={300}>
-        {photos[selected] ? <Photo photo={photos[selected]} navigator={true} next={next} prev={prev}  select={select} /> : <h3>Please select the photo</h3>}
+        {photos[selected] ? <Photo photo={photos[selected]} navigator={true} next={next} prev={prev} select={select} /> : <h3>Please select the photo</h3>}
         </ReactCSSTransitionGroup>
-        
-        
+
+
 
           <CardColumns>
-          {photos.map((photo, idx) => <Photo photo={photo} key={idx} id={idx} select={select} />)}  
+          {photos.map((photo, idx) => <Photo photo={photo} key={idx} id={idx} select={select} />)}
           </CardColumns>
-        
+
       </div>
     );
   }

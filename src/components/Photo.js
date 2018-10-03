@@ -32,14 +32,14 @@ class Photo extends Component{
     )
   }
 
-  
+
   render(){
     const {photo = null, id, width = 400, height = 300, select, navigator = false} = this.props;
     const {fading = false} = this.state;
     return(
       <div className={`${this.state.fading ? 'container faded' : 'container'}`}>
-        
-        <img src={photo.url} width="100%" height={height} onClick={() => select(id)} />
+
+        <img src={photo.url} width="100%" height="100%" onClick={() => select(id)} />
         {navigator ? this.renderNavigation() : null}
         <div className="bottom-right">{photo.caption}</div>
       </div>

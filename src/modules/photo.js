@@ -10,28 +10,28 @@ const GET_PHOTOS_FAILURE = "GET_PHOTOS_FAILURE";
 export const getPhotos = (count, callback = () => {}) => dispatch => {
   dispatch({ type: GET_PHOTOS_PENDING });
   let promises = [];
-  
+
   for(let i = 0 ; i < count ; i++){
     let promise = new Promise((resolve, reject) => {
       axios
-      .get("https://picsum.photos/400/300/?random", {
+      .get("https://picsum.photos/800/400/?random", {
         responseType: 'blob'
       })
       .then(response => {
         const reader = new window.FileReader();
-        reader.readAsDataURL(response.data); 
+        reader.readAsDataURL(response.data);
         reader.onload = function() {
 
             const imageDataUrl = reader.result;
             const caption = `Caption: ${i+1} Image`;
             resolve({
-              url: imageDataUrl, 
+              url: imageDataUrl,
               caption
             });
 
         }
-        
-        
+
+
       })
       .catch(error => reject(error));
     });
